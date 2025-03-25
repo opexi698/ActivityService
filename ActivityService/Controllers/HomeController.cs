@@ -1,6 +1,6 @@
-using System.Diagnostics;
 using ActivityService.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace ActivityService.Controllers
 {
