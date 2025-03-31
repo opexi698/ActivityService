@@ -1,4 +1,4 @@
-using ActivityService.Models;
+using ActivityService.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

@@ -1,4 +1,4 @@
-namespace ActivityService.Models
+namespace ActivityService.Models.ViewModels
 {
     public class ErrorViewModel
     {
