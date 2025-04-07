@@ -1,0 +1,17 @@
+﻿@model ActivityService.Models.ViewModels.SearchActivityViewModel
+
+@{
+    ViewData["Title"] = "Search Activities";
+}
+
+<h1>Search Activities</h1>
+
+<form asp-action="Search" method="post">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Search" class="btn btn-primary" />
+    </div>
+</form>

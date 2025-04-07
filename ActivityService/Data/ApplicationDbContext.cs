@@ -25,6 +25,18 @@ namespace ActivityService.Data
                    .Property(a => a.Price)
                    .HasPrecision(18, 2);
 
+            builder.Entity<Activity>()
+                   .HasOne(a => a.CreatedByUser)
+                   .WithMany()
+                   .HasForeignKey(a => a.CreatedBy)
+                   .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Activity>()
+                   .HasOne(a => a.UpdatedByUser)
+                   .WithMany()
+                   .HasForeignKey(a => a.UpdateBy)
+                   .OnDelete(DeleteBehavior.Restrict);
+
             builder.Entity<ActivityUser>()
                    .HasKey(au => new { au.ActivityId, au.UserId });
 

@@ -4,6 +4,7 @@ using ActivityService.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ActivityService.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250406180625_UpdatedActivity")]
+    partial class UpdatedActivity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -67,7 +70,7 @@ namespace ActivityService.Data.Migrations
 
                     b.HasIndex("UpdateBy");
 
-                    b.ToTable("Activities", (string)null);
+                    b.ToTable("Activities");
                 });
 
             modelBuilder.Entity("ActivityService.Models.Entities.ActivityUser", b =>
@@ -82,7 +85,7 @@ namespace ActivityService.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("ActivityUsers", (string)null);
+                    b.ToTable("ActivityUsers");
                 });
 
             modelBuilder.Entity("ActivityService.Models.Entities.ApplicationUser", b =>

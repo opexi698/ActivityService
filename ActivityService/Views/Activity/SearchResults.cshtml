@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ActivityService.Models.Entities.Activity>
+
+@{
+    ViewData["Title"] = "Search Results";
+}
+
+<h1>Search Results</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Address</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var activity in Model)
+        {
+            <tr>
+                <td>@activity.Name</td>
+                <td>@activity.StartDate.ToShortDateString()</td>
+                <td>@activity.EndDate.ToShortDateString()</td>
+                <td>@activity.Address</td>
+                <td>@activity.Price</td>
+                <td>
+                    <form asp-action="Register" method="post">
+                        <input type="hidden" name="activityId" value="@activity.Id" />
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
