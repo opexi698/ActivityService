@@ -4,6 +4,7 @@ using ActivityService.Repositories.Implementations;
 using ActivityService.Repositories.Interfaces;
 using ActivityService.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 

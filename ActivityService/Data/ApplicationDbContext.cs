@@ -49,6 +49,15 @@ namespace ActivityService.Data
                    .HasOne(au => au.User)
                    .WithMany()
                    .HasForeignKey(au => au.UserId);
+
+            builder.Entity<ApplicationUser>()
+                   .Property(u => u.IdCardNumber)
+                   .IsRequired()
+                   .HasMaxLength(10);
+
+            builder.Entity<ApplicationUser>()
+                   .HasIndex(u => u.IdCardNumber)
+                   .IsUnique();
         }
     }
 }
